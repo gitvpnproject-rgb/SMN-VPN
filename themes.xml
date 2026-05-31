@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.SMNVPN" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#4a6cff</item>
+        <item name="colorPrimaryVariant">#3657ff</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="android:windowBackground">#0f0f1a</item>
+        <item name="android:statusBarColor">#0f0f1a</item>
+        <item name="android:navigationBarColor">#0f0f1a</item>
+    </style>
+</resources>
