@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="32dp"
+    android:background="#0f0f1a">
+
+    <!-- Название -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SMN VPN"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Secure Mesh Network"
+        android:textSize="14sp"
+        android:textColor="#888888"
+        android:layout_marginBottom="48dp"/>
+
+    <!-- Статус -->
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Не подключено"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Узлы -->
+    <TextView
+        android:id="@+id/tvNodes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Узлы: —"
+        android:textSize="14sp"
+        android:textColor="#888888"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Шифрование -->
+    <TextView
+        android:id="@+id/tvEncryption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="—"
+        android:textSize="14sp"
+        android:textColor="#4a6cff"
+        android:layout_marginBottom="48dp"/>
+
+    <!-- Кнопка -->
+    <Button
+        android:id="@+id/btnConnect"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:text="ПОДКЛЮЧИТЬ"
+        android:textSize="16sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#4a6cff"
+        android:elevation="8dp"/>
+
+</LinearLayout>
