@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0f0f1a">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Заголовок -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Настройки"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Вкладки -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp"
+            android:background="#1c1c2b"
+            android:padding="4dp">
+
+            <TextView
+                android:id="@+id/tabNormal"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="🟢 Обычный"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:background="#4a6cff"/>
+
+            <TextView
+                android:id="@+id/tabParanoid"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="🔴 Параноик"
+                android:gravity="center"
+                android:textColor="#888888"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- ОБЫЧНЫЙ ПРОФИЛЬ                             -->
+        <!-- ═══════════════════════════════════════════ -->
+        <LinearLayout
+            android:id="@+id/layoutNormal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Защита"
+                android:textSize="12sp"
+                android:textColor="#888888"
+                android:textAllCaps="true"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Kill Switch -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#1c1c2b"
+                android:padding="16dp"
+                android:layout_marginBottom="2dp">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kill Switch"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Блокирует интернет если VPN упал"
+                        android:textColor="#888888"
+                        android:textSize="12sp"/>
+                </LinearLayout>
+                <Switch
+                    android:id="@+id/switchKillSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <!-- DNS Leak -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#1c1c2b"
+                android:padding="16dp"
+                android:layout_marginBottom="2dp">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DNS защита"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Предотвращает утечку DNS запросов"
+                        android:textColor="#888888"
+                        android:textSize="12sp"/>
+                </LinearLayout>
+                <Switch
+                    android:id="@+id/switchDnsLeak"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <!-- IPv6 Leak -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#1c1c2b"
+                android:padding="16dp"
+                android:layout_marginBottom="2dp">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="IPv6 защита"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Блокирует утечку через IPv6"
+                        android:textColor="#888888"
+                        android:textSize="12sp"/>
+                </LinearLayout>
+                <Switch
+                    android:id="@+id/switchIpv6Leak"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Соединение"
+                android:textSize="12sp"
+                android:textColor="#888888"
+                android:textAllCaps="true"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Авто-переподключение -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#1c1c2b"
+                android:padding="16dp"
+                android:layout_marginBottom="2dp">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Авто-переподключение"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Восстанавливает VPN автоматически"
+                        android:textColor="#888888"
+                        android:textSize="12sp"/>
+                </LinearLayout>
+                <Switch
+                    android:id="@+id/switchAutoReconnect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <!-- Умный выбор сервера -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#1c1c2b"
+                android:padding="16dp">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Умный выбор сервера"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Автоматически выбирает быстрый узел"
+                        android:textColor="#888888"
+                        android:textSize="12sp"/>
+                </LinearLayout>
+                <Switch
+                    android:id="@+id/switchSmartServer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- ПАРАНОИК ПРОФИЛЬ                            -->
+        <!-- ═══════════════════════════════════════════ -->
+        <LinearLayout
+            android:id="@+id/layoutParanoid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <!-- Предупреждение -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#2a1a1a"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="⚠️ Эти функции снижают скорость но повышают приватность. Включай если знаешь зачем."
+                    android:textColor="#FF8888"
+                    android:textSize="13sp"/>
+            </LinearLayout>
+
+            <!-- Multi-hop -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#1c1c2b"
+                android:padding="16dp"
+                android:layout_marginBottom="2dp">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Multi-hop VPN"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Трафик через 2-3 сервера подряд"
+                        android:textColor="#888888"
+                        android:textSize="12sp"/>
+                </LinearLayout>
+                <Switch
+                    android:id="@+id/switchMultiHop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <!-- Количество хопов -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#161625"
+                android:padding="16dp"
+                android:layout_marginBottom="2dp">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Количество серверов"
+                    android:textColor="#888888"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical"/>
+                <Spinner
+                    android:id="@+id/spinnerHops"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <!-- Smart routing -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#1c1c2b"
+                android:padding="16dp"
+                android:layout_marginBottom="2dp">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Smart routing"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Разный трафик идёт разными путями"
+                        android:textColor="#888888"
+                        android:textSize="12sp"/>
+                </LinearLayout>
+                <Switch
+                    android:id="@+id/switchSmartRouting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <!-- Авто-ротация ключей -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#1c1c2b"
+                android:padding="16dp"
+                android:layout_marginBottom="2dp">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Авто-ротация ключей"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ключи шифрования меняются каждые 10 мин"
+                        android:textColor="#888888"
+                        android:textSize="12sp"/>
+                </LinearLayout>
+                <Switch
+                    android:id="@+id/switchKeyRotation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <!-- Обфускация -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#1c1c2b"
+                android:padding="16dp"
+                android:layout_marginBottom="2dp">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Обфускация трафика"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Скрывает VPN от глубокой проверки (DPI)"
+                        android:textColor="#888888"
+                        android:textSize="12sp"/>
+                </LinearLayout>
+                <Switch
+                    android:id="@+id/switchObfuscation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <!-- Высокая анонимность -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#1c1c2b"
+                android:padding="16dp">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Высокая анонимность"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Усиленная маршрутизация на уровне сети"
+                        android:textColor="#888888"
+                        android:textSize="12sp"/>
+                </LinearLayout>
+                <Switch
+                    android:id="@+id/switchHighAnon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
